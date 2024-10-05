@@ -1,0 +1,5 @@
+2024-10-05 12:50:57 - ERROR - Error decoding JSON from file: /home/gabriel/Bureau/etl_sales/catalog_db/data/catalog.json
+2024-10-05 12:50:57 - CRITICAL - Failed to load or parse JSON file: Extra data: line 2 column 1 (char 64)
+2024-10-05 12:52:53 - INFO - Successfully loaded JSON file: /home/gabriel/Bureau/etl_sales/catalog_db/data/catalog.json
+2024-10-05 12:52:53 - INFO - Inserted 438 documents into 'catalog.electronics'
+2024-10-05 12:52:53 - INFO - MongoDB connection closed.
