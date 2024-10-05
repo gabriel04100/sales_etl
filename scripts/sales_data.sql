@@ -2625,6 +2625,8 @@ INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp")
 INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp") VALUES (8708, 2360, 3089, 1, '2020-09-05 17:03:25');
 INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp") VALUES (6991, 41176, 1119, 3, '2020-09-05 17:03:26');
 INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp") VALUES (8711, 63757, 3391, 2, '2020-09-05 17:03:27');
+INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp") VALUES (2054, 4896, 10, 2, '2024-10-05 00:00:00');
+INSERT INTO public.sales (product_id, customer_id, price, quantity, "timestamp") VALUES (6442, 8681, 2, 2, '2024-10-21 00:00:00');
 
 
 --
