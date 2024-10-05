@@ -22,13 +22,14 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
+
 def load_json_file(json_file_path):
-    """Load and return the contents of a JSON file with multiple JSON objects."""
+    """Load and return the contents of a JSON file with multiple JSON."""
     data = []
     try:
         with open(json_file_path, 'r') as file:
             for line in file:
-                # Convert each line (JSON object) to a dictionary and append to the list
+                # Convert each line (JSON object) to a dictionary and append
                 data.append(json.loads(line.strip()))
         logging.info(f"Successfully loaded JSON file: {json_file_path}")
         return data
@@ -36,8 +37,11 @@ def load_json_file(json_file_path):
         logging.error(f"File not found: {json_file_path}")
         raise
     except json.JSONDecodeError as e:
-        logging.error(f"Error decoding JSON from file: {json_file_path}, Error: {e}")
+        logging.error("Error decoding JSON from file: {}, Error: {}".format(
+            json_file_path, e
+        ))
         raise
+
 
 def insert_into_mongodb(data, db_name, collection_name):
     """Insert data into MongoDB collection."""
@@ -50,9 +54,13 @@ def insert_into_mongodb(data, db_name, collection_name):
         # Insert JSON data into the collection
         if data:
             result = collection.insert_many(data)
-            logging.info(f"Inserted {len(result.inserted_ids)} documents into '{db_name}.{collection_name}'")
+            logging.info("Inserted {} documents into '{}.{}'".format(
+                len(result.inserted_ids), db_name, collection_name
+                ))
         else:
-            logging.warning(f"No data to insert into '{db_name}.{collection_name}'")
+            logging.warning("No data to insert into '{}.{}'".format(
+                db_name, collection_name
+            ))
 
     except errors.ConnectionError as ce:
         logging.error(f"Connection error: {ce}")
@@ -64,10 +72,10 @@ def insert_into_mongodb(data, db_name, collection_name):
         client.close()
         logging.info("MongoDB connection closed.")
 
+
 if __name__ == "__main__":
     # Path to the .json file located in the data directory
     json_file_path = os.path.join(script_dir, 'data', 'catalog.json')
-    
     # Load JSON data
     try:
         data = load_json_file(json_file_path)
@@ -77,13 +85,10 @@ if __name__ == "__main__":
 
     # Insert JSON data into MongoDB
     try:
-        insert_into_mongodb(data, db_name='catalog', collection_name='electronics')
+        insert_into_mongodb(data, db_name='catalog',
+                            collection_name='electronics')
     except Exception as e:
         logging.critical(f"Failed to insert data into MongoDB: {e}")
         exit(1)  # Exit if the insertion fails
 
     print("Data insertion complete. Check logs for details.")
-
-
-
-
