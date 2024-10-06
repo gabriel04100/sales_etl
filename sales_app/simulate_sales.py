@@ -16,6 +16,7 @@ def simulate_sales_per_day(lam=2000):
     # Simulating sales from 9 AM to 9 PM
     start_time = datetime.now().replace(hour=9, minute=0, second=0,
                                         microsecond=0)
+
     # Number of sales to simulate for the day
     sales_count = np.random.poisson(lam=lam)
 
@@ -45,8 +46,11 @@ def simulate_sales_per_day(lam=2000):
     return records
 
 
-def append_records_to_csv(records,
-                          filename='./sales_app/data/sales_data.csv'):
+def append_records_to_csv(records):
+    # Generate the filename with the current date
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    filename = f'./sales_app/data/sales_data_{current_date}.csv'
+
     # Specify the CSV file headers
     headers = ['timestamp', 'product_id', 'customer_id', 'price', 'quantity']
 
@@ -67,7 +71,7 @@ if __name__ == "__main__":
         # Simulate sales
         records = simulate_sales_per_day(lam=2000)
 
-        # Append records to CSV
+        # Append records to CSV with a date in the filename
         append_records_to_csv(records)
 
         # Log success message
