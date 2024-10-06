@@ -31,7 +31,7 @@ cur = conn.cursor()
 # Function to insert user data
 def insert_user_data(num_users):
     for _ in range(num_users):
-        user_id = fake.random_int(min=1000, max=9999)
+        user_id = fake.random_int(min=10000, max=99999)
         name = fake.name()
         age = random.randint(18, 70)
         gender = random.choice(['M', 'F'])
@@ -45,7 +45,7 @@ def insert_user_data(num_users):
 # Function to insert product data
 def insert_product_data(num_products):
     for _ in range(num_products):
-        product_id = fake.random_int(min=10000, max=99999)
+        product_id = fake.random_int(min=1000, max=9999)
         product_name = fake.word().capitalize()
         category = random.choice(['Electronics', 'Furniture',
                                   'Clothing', 'Toys'])
@@ -57,8 +57,8 @@ def insert_product_data(num_products):
         """, (product_id, product_name, category, price))
 
 
-insert_user_data(10)
-insert_product_data(10)
+insert_user_data(2)
+insert_product_data(2)
 conn.commit()
 cur.close()
 conn.close()
