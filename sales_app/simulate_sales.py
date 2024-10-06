@@ -17,12 +17,11 @@ def simulate_sales_per_day(lam=2000):
     start_time = datetime.now().replace(hour=9, minute=0, second=0,
                                         microsecond=0)
 
-    # Number of sales to simulate for the day
     sales_count = np.random.poisson(lam=lam)
 
     for _ in range(sales_count):
         # Randomly generate a timestamp for the sale within the 12-hour window
-        time_offset = np.random.uniform(0, 12 * 60 * 60)  # Seconds in 12 hours
+        time_offset = np.random.uniform(0, 12 * 60 * 60)
         sale_time = start_time + timedelta(seconds=time_offset)
 
         # Generate the random variables for the sale
@@ -51,7 +50,6 @@ def append_records_to_csv(records):
     current_date = datetime.now().strftime('%Y-%m-%d')
     filename = f'./sales_app/data/sales_data_{current_date}.csv'
 
-    # Specify the CSV file headers
     headers = ['timestamp', 'product_id', 'customer_id', 'price', 'quantity']
 
     # Open the CSV file in append mode, and write the sales records
@@ -62,19 +60,14 @@ def append_records_to_csv(records):
         if file.tell() == 0:
             writer.writeheader()
 
-        # Write the records
         writer.writerows(records)
 
 
 if __name__ == "__main__":
     try:
-        # Simulate sales
+
         records = simulate_sales_per_day(lam=2000)
-
-        # Append records to CSV with a date in the filename
         append_records_to_csv(records)
-
-        # Log success message
         logging.info(f"Successfully simulated {len(records)}")
 
     except Exception as e:
