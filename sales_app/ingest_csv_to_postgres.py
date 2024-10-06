@@ -26,7 +26,7 @@ def find_latest_csv(directory='./sales_app/data/'):
     csv_files = glob.glob(f"{directory}/*.csv")
     if not csv_files:
         logging.error("No CSV files found.")
-        raise FileNotFoundError("No CSV files found.") 
+        raise FileNotFoundError("No CSV files found.")
     # Sort files by modified time and return the latest one
     latest_file = max(csv_files, key=os.path.getmtime)
     logging.info(f"Found latest CSV file: {latest_file}")
