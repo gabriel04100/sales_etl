@@ -49,7 +49,7 @@ def insert_product_data(num_products):
         product_name = fake.word().capitalize()
         category = random.choice(['Electronics', 'Furniture',
                                   'Clothing', 'Toys'])
-        price = round(random.uniform(10.0, 5000.0), 2)     
+        price = round(random.uniform(10.0, 5000.0), 2)
         cur.execute("""
             INSERT INTO product_metadata
                     (product_id, product_name, category, price)
