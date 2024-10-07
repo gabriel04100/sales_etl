@@ -1,0 +1,101 @@
+2024-10-07 13:36:32,433 - INFO - Starting ETL process.
+2024-10-07 13:36:32,433 - DEBUG - Loading configuration file.
+2024-10-07 13:36:32,433 - ERROR - Failed to load configuration file: [Errno 2] No such file or directory: './config/config.yml'
+2024-10-07 13:36:55,572 - INFO - Starting ETL process.
+2024-10-07 13:36:55,572 - DEBUG - Loading configuration file.
+2024-10-07 13:36:55,572 - ERROR - Failed to load configuration file: while scanning for the next token
+found character '@' that cannot start any token
+  in "./etl/config/config.yml", line 5, column 13
+2024-10-07 13:38:07,107 - INFO - Starting ETL process.
+2024-10-07 13:38:07,107 - DEBUG - Loading configuration file.
+2024-10-07 13:38:07,108 - INFO - Configuration loaded successfully.
+2024-10-07 13:38:07,308 - INFO - Data extracted successfully!
+2024-10-07 13:38:07,315 - ERROR - An error occurred during the ETL process: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': ERREUR:  erreur de syntaxe sur ou près de « ; »
+LINE 8:             AND name=?;
+                              ^
+
+2024-10-07 13:38:07,315 - INFO - ETL process completed.
+2024-10-07 13:44:08,085 - INFO - Starting ETL process.
+2024-10-07 13:44:08,085 - DEBUG - Loading configuration file.
+2024-10-07 13:44:08,086 - INFO - Configuration loaded successfully.
+2024-10-07 13:44:08,160 - INFO - Data extracted successfully!
+2024-10-07 13:44:08,252 - ERROR - An error occurred during the ETL process: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': ERREUR:  erreur de syntaxe sur ou près de « ; »
+LINE 8:             AND name=?;
+                              ^
+
+2024-10-07 13:44:08,252 - INFO - ETL process completed.
+2024-10-07 13:46:08,943 - INFO - Starting ETL process.
+2024-10-07 13:46:08,943 - DEBUG - Loading configuration file.
+2024-10-07 13:46:08,945 - INFO - Configuration loaded successfully.
+2024-10-07 13:46:09,103 - INFO - Data extracted successfully!
+2024-10-07 13:46:09,110 - ERROR - An error occurred during the ETL process: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': ERREUR:  erreur de syntaxe sur ou près de « ; »
+LINE 8:             AND name=?;
+                              ^
+
+2024-10-07 13:46:09,110 - INFO - ETL process completed.
+2024-10-07 13:50:29,068 - INFO - Starting ETL process.
+2024-10-07 13:50:29,068 - DEBUG - Loading configuration file.
+2024-10-07 13:50:29,069 - INFO - Configuration loaded successfully.
+2024-10-07 13:50:29,236 - INFO - Data extracted successfully!
+2024-10-07 13:50:29,242 - INFO - Data loaded successfully into the target database.
+2024-10-07 13:50:29,242 - INFO - ETL process completed.
+2024-10-07 13:53:09,762 - INFO - Starting ETL process.
+2024-10-07 13:53:09,762 - DEBUG - Loading configuration file.
+2024-10-07 13:53:09,763 - INFO - Configuration loaded successfully.
+2024-10-07 13:53:09,953 - INFO - Data extracted successfully!
+2024-10-07 13:53:09,961 - INFO - Data loaded successfully into the target database.
+2024-10-07 13:53:09,961 - INFO - ETL process completed.
+2024-10-07 13:54:28,644 - INFO - Starting ETL process.
+2024-10-07 13:54:28,644 - DEBUG - Loading configuration file.
+2024-10-07 13:54:28,645 - INFO - Configuration loaded successfully.
+2024-10-07 13:54:28,813 - INFO - Data extracted successfully!
+2024-10-07 13:54:28,819 - INFO - Data loaded successfully into the target database.
+2024-10-07 13:54:28,819 - INFO - ETL process completed.
+2024-10-07 13:57:20,316 - INFO - Starting ETL process.
+2024-10-07 13:57:20,316 - DEBUG - Loading configuration file.
+2024-10-07 13:57:20,317 - INFO - Configuration loaded successfully.
+2024-10-07 13:57:20,483 - INFO - Data extracted successfully!
+2024-10-07 13:57:20,492 - INFO - Data loaded successfully into the target database.
+2024-10-07 13:57:20,492 - INFO - ETL process completed.
+2024-10-07 14:00:11,273 - INFO - Starting ETL process.
+2024-10-07 14:00:11,273 - DEBUG - Loading configuration file.
+2024-10-07 14:00:11,275 - INFO - Configuration loaded successfully.
+2024-10-07 14:00:11,437 - INFO - Data extracted successfully!
+2024-10-07 14:00:11,461 - INFO - Data loaded successfully into the target database.
+2024-10-07 14:00:11,461 - INFO - ETL process completed.
+2024-10-07 14:02:38,566 - INFO - Starting ETL process.
+2024-10-07 14:02:38,566 - DEBUG - Loading configuration file.
+2024-10-07 14:02:38,567 - INFO - Configuration loaded successfully.
+2024-10-07 14:02:38,733 - INFO - Data extracted successfully!
+2024-10-07 14:02:38,756 - INFO - Data loaded successfully into the target database.
+2024-10-07 14:02:38,756 - INFO - ETL process completed.
+2024-10-07 14:04:23,498 - INFO - Starting ETL process.
+2024-10-07 14:04:23,498 - DEBUG - Loading configuration file.
+2024-10-07 14:04:23,499 - INFO - Configuration loaded successfully.
+2024-10-07 14:04:23,661 - INFO - Data extracted successfully!
+2024-10-07 14:04:23,850 - INFO - Data loaded successfully into the target database.
+2024-10-07 14:04:23,850 - INFO - ETL process completed.

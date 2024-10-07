@@ -2,31 +2,27 @@ import pandas as pd
 from connector import create_connection
 
 
-# Extract data from source database
 def extract_data(db_config):
     conn = create_connection(db_config)
-    query = """
+    query_monthly_sales_report = """
     SELECT
-        s.sales_id,
-        s.sale_date,
-        s.quantity,
-        s.sales_value,
-        u.user_id,
-        u.name AS user_name,
-        u.age,
-        u.gender,
-        u.city,
-        p.product_id,
-        p.product_name,
+        to_char(s."timestamp", 'YYYY-MM') AS month,
         p.category AS product_category,
-        p.price AS product_price
+        ROUND(CAST(SUM(s.price * s.quantity) AS numeric), 2) AS total_revenue,
+        CASE
+            WHEN NTILE(4) OVER (PARTITION BY to_char(s."timestamp", 'YYYY-MM')
+            ORDER BY SUM(s.price * s.quantity)) = 1 THEN 'Low'
+            WHEN NTILE(4) OVER (PARTITION BY to_char(s."timestamp", 'YYYY-MM')
+            ORDER BY SUM(s.price * s.quantity)) = 2 THEN 'Medium-Low'
+            WHEN NTILE(4) OVER (PARTITION BY to_char(s."timestamp", 'YYYY-MM')
+            ORDER BY SUM(s.price * s.quantity)) = 3 THEN 'Medium-High'
+            ELSE 'High'
+        END AS revenue_performance
     FROM
         sales s
     JOIN
-        user_metadata u ON s.user_id = u.user_id
-    JOIN
-        product_metadata p ON s.product_id = p.product_id;
+        product_metadata p ON s.product_id = p.product_id
+    GROUP BY
+        month, product_category;
     """
-    df = pd.read_sql(query, conn)
-    conn.close()
-    return df
+    return pd.read_sql(query_monthly_sales_report, conn)
