@@ -4,4 +4,4 @@
 Sales oltp database with simulated data (Poisson law) transformed into monthly sales report
 
 
-![Alt text](ETL.png "ETL structure")
+![Alt text](ETL.jpg "ETL structure")
