@@ -43,11 +43,13 @@ def load_data(df, db_config, target_table):
             # Insert row into the target table
             insert_query = sql.SQL("""
                 INSERT INTO {table} (month, product_category, total_revenue,
+                                     total_quantity,
                                      revenue_performance)
-                VALUES (%s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s)
             """).format(table=sql.Identifier(target_table))
             cur.execute(insert_query, (start_date, row['product_category'],
                                        row['total_revenue'],
+                                       row['total_quantity'],
                                        row['revenue_performance']))
 
         # Commit the transaction
