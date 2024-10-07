@@ -8,6 +8,7 @@ def extract_data(db_config):
     SELECT
         to_char(s."timestamp", 'YYYY-MM') AS month,
         p.category AS product_category,
+        SUM(s.quantity) AS total_quantity,
         ROUND(CAST(SUM(s.price * s.quantity) AS numeric), 2) AS total_revenue,
         CASE
             WHEN NTILE(4) OVER (PARTITION BY to_char(s."timestamp", 'YYYY-MM')

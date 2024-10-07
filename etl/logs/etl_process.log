@@ -99,3 +99,9 @@ LINE 8:             AND name=?;
 2024-10-07 14:04:23,661 - INFO - Data extracted successfully!
 2024-10-07 14:04:23,850 - INFO - Data loaded successfully into the target database.
 2024-10-07 14:04:23,850 - INFO - ETL process completed.
+2024-10-07 14:27:39,581 - INFO - Starting ETL process.
+2024-10-07 14:27:39,581 - DEBUG - Loading configuration file.
+2024-10-07 14:27:39,582 - INFO - Configuration loaded successfully.
+2024-10-07 14:27:39,743 - INFO - Data extracted successfully!
+2024-10-07 14:27:39,931 - INFO - Data loaded successfully into the target database.
+2024-10-07 14:27:39,931 - INFO - ETL process completed.

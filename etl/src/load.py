@@ -16,6 +16,7 @@ def load_data(df, db_config, target_table):
             month DATE NOT NULL,  -- Use DATE type for better date handling
             product_category VARCHAR NULL,
             total_revenue FLOAT4 NULL,
+            total_quantity INT4 NULL,
             revenue_performance VARCHAR NULL
         ) PARTITION BY RANGE (month);
         """
