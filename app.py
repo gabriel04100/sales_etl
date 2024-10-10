@@ -1,8 +1,6 @@
 import streamlit as st
-import pandas as pd
 from dotenv import load_dotenv
 from pygwalker.api.streamlit import StreamlitRenderer
-import pygwalker as pyg
 
 # Load environment variables if necessary (e.g., for database credentials)
 load_dotenv()
